@@ -5,8 +5,8 @@ html {
 }
 
 :root {
-  --color-primary: #2854ff;
-  --color-secondary: #00d9ff;
+  --color-primary: #00d9ff;
+  --color-secondary: #2854ff;
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
@@ -82,8 +82,42 @@ a {
   margin-left: 15px;
 }
 
-@media screen and (min-width : 1024px) {
-    .link-arrow {
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
+  }
+}
+
+/* 标签 badge */
+
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem  2rem;
+  white-space: nowrap; /* 这里防止标签的文字另起一行 */
+}
+
+.badge--primary {
+  /* BEM blco element modifyier 块元素构造符 用两个短横线表示一个块，或者说一个组件的构造 比如主要标签 */
+  background: var(--color-primary);
+  color: white;
+}
+
+.badge--secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.badge--small{
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
         font-size: 1.5rem;
+    }
+    .badge--small{
+        font-size: 1.2rem;
     }
 }
