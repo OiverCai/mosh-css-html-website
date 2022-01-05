@@ -60,7 +60,7 @@ p {
   }
 }
 
-/* 超链接 */
+/* 链接 links */
 a {
   text-decoration: none; /* 没有下划线了 */
 }
@@ -79,6 +79,7 @@ a {
 }
 
 .link-arrow:hover::after {
+  /* 这条规则只会动态的在尾部伪类悬停的状态才起效 而且顺序不能反 */
   margin-left: 15px;
 }
 
@@ -95,11 +96,11 @@ a {
   font-size: 2rem;
   font-weight: 600;
   padding: 0.5rem  2rem;
-  white-space: nowrap; /* 这里防止标签的文字另起一行 */
+  white-space: nowrap; /* 这里防止标签的文字另起一行  css 防止文字另起一行*/
 }
 
 .badge--primary {
-  /* BEM blco element modifyier 块元素构造符 用两个短横线表示一个块，或者说一个组件的构造 比如主要标签 */
+  /* BEM block element modifyier 块元素构造符 用两个短横线表示一个块，或者说一个组件的构造 比如主要标签 */
   background: var(--color-primary);
   color: white;
 }
@@ -120,4 +121,36 @@ a {
     .badge--small{
         font-size: 1.2rem;
     }
+}
+
+/* lists 列表 */
+.list{  /* 因为样式图里虽然有横向和纵向的 但还是有共性的  都没有标号和下划线之类 */
+  list-style: none; 
+  padding-left: 0;   /* 也要去掉所有浏览器给列表的外边距 */
+  color: var(--color-headings);
+
+}
+
+.list--inline .list__item{  /* 区域名和结构名用双下划线分开  它不是另一个单独存在的元素或者组件，它只是存在于这个列表中的 */
+  display : inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick{
+  list-style-image: url(../images/tick.svg);
+  /* 指定列表中的列表项标记的图像： */
+  padding-left: 3rem;
+}
+
+.list--tick .list__item{
+  /* 防止左边被屏幕吞噬显示不出   这里的嵌套是有一定道理的,如果删除.list--tick就会显示到所有list__item里 */
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item{
+    /* 区别就是图标和文字之间距离小一点 */
+    padding-left: 0;
+  }
 }
