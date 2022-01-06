@@ -25,7 +25,7 @@ body {
   font-family: Inter, arial, helvetica, sans-serif;
   font-size: 2.4rem;
   line-height: 1.5;
-  color: var(--color-primary);
+  color: var(--color-body);
 }
 
 h1,
@@ -121,6 +121,7 @@ a {
 
 .badge--small{
     font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -230,6 +231,17 @@ a {
   background: #ec3000;
 }
 
+.btn--outline {
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
+}
+
+.btn--outline:hover {
+  background: var(--color-headings);
+  color: #fff;
+}
+
 .btn--block{
   /* 延伸到一整行显示 */
   width: 100%;
@@ -284,4 +296,82 @@ a {
     .input{
       font-size:1.5rem;
     }
+}
+
+
+/* card 卡片 */
+.card{
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  /* 垂直水平位移为0  将羽化值设为20像素，让他更加软化 然后缩放设为10像素 */
+  overflow: hidden;
+  /* 设置.card__header时 子元素颜色溢出了,标题的尺寸就比父级元素大了，也就它的容器ー一卡片元素  把父元素的圆角覆盖了 */
+}
+
+.card__header,
+.card__body 
+{
+  padding: 2rem 3rem;
+}
+
+.card--primary .card__header{
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.card--secondary .card__header{
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.card--secondary .badge--secondary {
+  background: #02cdf1;
+}
+
+/* 计划 plans */
+
+.plan__name{
+  color: #fff;
+  margin: 0;
+  /* h3自带margin 这里我们修改小一点 */
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.plan__price{
+  font-size: 6rem;
+}
+
+.plan__billing-cycle{
+  opacity: 80%;
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-right: 1rem;
+}
+
+.plan__description{
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block; /*这样就能独立一行*/
+}
+
+.plan .list__item{
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px){
+  .plan__name{
+    font-size: 1.4rem;
+  }
+
+  .plan__price{
+    font-size:5rem;
+  }
+  .plan__billing-cycle{
+    font-size: 1.6rem ;
+  }
+  .plan__description{
+    font-size:1.7rem;
+  }
 }
