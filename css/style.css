@@ -154,3 +154,27 @@ a {
     padding-left: 0;
   }
 }
+
+/* 图标 icon */
+
+.icon{
+  width: 40px;
+  height: 40px;
+}
+
+.icon--primary{
+  fill : var(--color-primary)
+  /* fill只对svg生效  设置颜色 */
+}
+
+.icon-container{
+  background-color: #f3f9fa;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex; 
+  justify-content: center;
+  align-items: center;
+  /* html里用的是span,高度是不起作用的,所以显示错误 如果用block虽然在一个行内  但就会换行,这是我们不希望的 inline-block就不会对准中心
+  flex主轴默认水平 */
+}
