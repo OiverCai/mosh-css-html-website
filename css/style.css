@@ -5,11 +5,20 @@ html {
 }
 
 :root {
-  --color-primary: #00d9ff;
-  --color-secondary: #2854ff;
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-body-darker: #5c5577;
+  --color-border: #ccc;
+  --border-radius: 30px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box; /*想要设置的边框和内边距的值是包含在width内的 更好计算*/
 }
 
 body {
@@ -177,4 +186,101 @@ a {
   align-items: center;
   /* html里用的是span,高度是不起作用的,所以显示错误 如果用block虽然在一个行内  但就会换行,这是我们不希望的 inline-block就不会对准中心
   flex主轴默认水平 */
+}
+
+
+/* 按钮 botton */
+.btn{
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer; /*放置时鼠标的样式*/
+  font-size: 1.8rem;
+  font-weight:600;
+  padding: 2rem 3rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn--primary{
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover{
+  background: #3a8ffd;
+}
+
+.btn--secondary{
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.btn--secondary:hover{
+  background: #00c8eb;
+}
+
+.btn--accent{
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--accent:hover{
+  background: #ec3000;
+}
+
+.btn--block{
+  width: 100%;
+  display: inline-block;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn{
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* inputs 输入 */
+
+.input{
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  color: var(--color-headings);
+  font-size: 2rem;  /* 因为normalize修改了字体大小,所以这里要重新设置 */
+  outline: 0; /* 点击时的外边框 厚度? */
+  padding: 1.5rem 3.5rem;
+}
+
+
+::placeholder{  /* 占位符的伪元素 */
+  color: #cdcbd7;
+
+}
+
+.input-group{
+  border : 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+  /* 为了让按钮和输入占满整个 flex flex-grow  */
+}
+
+.input-group .input{
+  border: 0;
+  flex-grow: 1;
+  padding: 1.5rem 1rem;
+}
+
+.input-group .btn{
+  margin: 4px 4px;/* 不希望受到字体大小的影响,外边距永远是4px */
+}
+
+@media screen and  (min-width: 1024px){
+    .input{
+      font-size:1.5rem;
+    }
 }
