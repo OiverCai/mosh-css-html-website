@@ -231,6 +231,7 @@ a {
 }
 
 .btn--block{
+  /* 延伸到一整行显示 */
   width: 100%;
   display: inline-block;
 }
