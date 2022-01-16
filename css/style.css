@@ -411,7 +411,7 @@ a {
   margin-top: 1rem;
 }
 
-/* 引用 quotes */
+/* 引言 quotes */
 
 .quote{
   color: var(--color-body-darker);
@@ -427,4 +427,43 @@ a {
 
 .quote__text::after{
   content : close-quote;
+}
+
+.quote__author{
+/* 这里作者表示不用 .quote media__title 这种形式的原因在于他更喜欢使用独立的类,不然当我们想要删掉这个媒体组件，重构这个模块的时候 换句话说 耦合性太强了 */
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: normal;
+   margin-bottom: 0;   /*和下面离得更近一些 */
+}
+
+.quote__organization{
+  color: var(--color-headings);
+  font-size: 2rem;
+  font-style: normal;
+  opacity:0.4;
+}
+
+.quote__line{
+  position: relative;
+  bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .quote{
+    font-size: 2rem;
+  }
+
+  .quote__author{
+    font-size:2.4rem;
+  }
+
+  .quote__organization{
+    font-size:1.6rem;
+  }
+
+  .quote__line{
+    position: relative;
+    bottom: 1.5rem;
+  }
 }
