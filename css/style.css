@@ -172,9 +172,18 @@ a {
   height: 40px;
 }
 
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
 .icon--primary{
   fill : var(--color-primary)
   /* fill只对svg生效  设置颜色 */
+}
+
+.icon--white{
+  fill :white;
 }
 
 .icon-container{
@@ -187,6 +196,10 @@ a {
   align-items: center;
   /* html里用的是span,高度是不起作用的,所以显示错误 如果用block虽然在一个行内  但就会换行,这是我们不希望的 inline-block就不会对准中心
   flex主轴默认水平 */
+}
+
+.icon-container--accent{
+  background: var(--color-accent);
 }
 
 
@@ -493,3 +506,36 @@ a {
   }
 }
 
+/* testimonials 推荐 */
+
+.testimonial{
+  padding: 3rem;
+}
+
+.testimonial__image{
+  position: relative;
+}
+
+.testimonial__image >img{
+  /* 作者觉得不太可能改变 才这么写 */
+  width: 100%;
+}
+
+.testimonial__image > .icon-container{
+  position: absolute;
+  top: 3rem;
+  right: -32px; 
+  /* 根据图标大小64px来的一半 */
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author    
+  {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote{
+    margin-left: 6rem;
+  }
+}
