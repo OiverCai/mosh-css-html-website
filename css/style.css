@@ -61,7 +61,7 @@ p {
   }
 
   h2 {
-    font-size: 4rem;
+    /* font-size: 4rem; */
   }
 
   h3 {
@@ -622,5 +622,50 @@ a {
   /* display: block; */
   opacity: 1;
   max-height: 100vh;
+}
+
+/* 块 block */
+.block{
+  --padding-vertical : 6rem;
+  padding: var(--padding-vertical) 2rem;
+  /* border: 2px solid red; */
+  text-align: center;
+}
+
+.block__header{
+  /* 把大的组件拆封成小的组件,h2和p组合成这个header这个小组件,以防某些设置干扰到新增的子元素 */
+  text-align: center;
+}
+
+.block__heading{
+  /* 因为看了下,默认是33px 没法上下对齐 */
+  margin-top: 0;
+}
+
+.block--dark{
+  background-color: black;
+  color: #7b858b;
+}
+
+.block--dark .block__heading{
+  color: white;
+}
+
+.block--skewed-right{
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  /* 裁剪了边区 需要加长下面的长度 所以改成10 本来是6 */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+}
+
+.block--skewed-left{
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+
+/* 容器 container 1140px 按照设计稿来 */
+.container{
+  margin: 0 auto;
+  max-width: 1140px;
 }
 
