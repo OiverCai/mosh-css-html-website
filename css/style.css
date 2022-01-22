@@ -135,10 +135,9 @@ a {
 
 /* lists 列表 */
 .list{  /* 因为样式图里虽然有横向和纵向的 但还是有共性的  都没有标号和下划线之类 */
-  list-style: none; 
+  list-style: none;
   padding-left: 0;   /* 也要去掉所有浏览器给列表的外边距 */
-  color: var(--color-headings);
-
+  /* color: var(--color-headings); */
 }
 
 .list--inline .list__item{  /* 区域名和结构名用双下划线分开  它不是另一个单独存在的元素或者组件，它只是存在于这个列表中的 */
@@ -669,3 +668,70 @@ a {
   max-width: 1140px;
 }
 
+/* 导航栏 navigation bar */
+
+.nav{
+  background-color: #000;
+  display :flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* 让弹性盒元素在必要的时候拆行： */
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.nav__list{
+  width: 100%;
+  margin: 0;
+}
+
+.nav__item{
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.nav__item > a {
+  color: #d2d0db;
+  /* 写在.nav__item  会被本身的样式覆盖 */
+}
+
+.nav__item > a:hover {
+  color: white;
+}
+
+.nav__toggler{
+  opacity: 0.5;
+  transition: box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.nav.collapsible--expanded .nav__toggler{
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius:  5px;;
+}
+
+.nav__brand{
+  transform : translateY(5px); 
+}
+
+@media screen and (min-width: 768px){
+  .nav__toggler{
+    display: none;
+  }
+
+  .nav__list{
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+
+    /* 让列表内元素总是能显示出来 上面的 collapsible为了让内容不显示让高度为0 透明度为0*/
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__item{
+    border: 0;
+  }
+  
+}
