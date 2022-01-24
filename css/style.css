@@ -33,6 +33,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem; /* 通过测量得出大概离下面正文20px  但是文字的顶外边距大于了这个值所以这么设置没有用  所以让p 的 margin-top: 0;*/
+  line-height: 1.1;
 }
 
 h1 {
@@ -653,12 +654,12 @@ a {
 .block--skewed-right{
   padding-bottom: calc(var(--padding-vertical) + 4rem);
   /* 裁剪了边区 需要加长下面的长度 所以改成10 本来是6 */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
 .block--skewed-left{
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
 
@@ -734,4 +735,32 @@ a {
     border: 0;
   }
   
+}
+
+/* 英雄组件 hero */
+.hero{
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+
+.hero__tagline{
+  font-size:2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__img{
+  width: 100%;
+}
+
+@media screen and (min-width: 768px){
+  .hero{
+    padding-top: 0;
+  }
+
+  .hero__content{
+    text-align: left;
+    align-self: center;
+  }
 }
