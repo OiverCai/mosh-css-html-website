@@ -656,7 +656,7 @@ a {
   --padding-vertical : 6rem;
   padding: var(--padding-vertical) 2rem;
   /* border: 2px solid red; */
-  text-align: center;
+  /* text-align: center; */
 }
 
 .block__header{
@@ -826,4 +826,30 @@ a {
 .block-plans .card{
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* features blcok */
+.feature{
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+  text-align: left;
+}
+.feature:first-of-type{
+  margin-top: 6rem;
+}
+
+.feature__heading{
+margin-top: 1rem 0;
+}
+
+
+
+.feature__img{
+  width: 100%;
+}
+
+@media  screen and (min-width: 768px){
+  .feature:nth-of-type(even) .feature__content{
+    order: 2;
+  }
 }
