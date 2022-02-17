@@ -15,6 +15,8 @@ html {
   --border-radius: 30px;
 }
 
+
+
 *,
 *::before,
 *::after{
@@ -67,6 +69,7 @@ p {
 
   h3 {
     font-size: 2.4rem;
+    font-weight: 500;
   }
 }
 
@@ -138,7 +141,7 @@ a {
 .list{  /* 因为样式图里虽然有横向和纵向的 但还是有共性的  都没有标号和下划线之类 */
   list-style: none;
   padding-left: 0;   /* 也要去掉所有浏览器给列表的外边距 */
-  color: var(--color-headings);
+
 }
 
 .list--inline .list__item{  /* 区域名和结构名用双下划线分开  它不是另一个单独存在的元素或者组件，它只是存在于这个列表中的 */
@@ -150,6 +153,7 @@ a {
   list-style-image: url(../images/tick.svg);
   /* 指定列表中的列表项标记的图像： */
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 .list--tick .list__item{
@@ -442,6 +446,7 @@ a {
 
 .media{
   display:flex;
+  margin-bottom: 4rem;
 }
 
 .media__title{
@@ -674,19 +679,22 @@ a {
   color: #7b858b;
 }
 
-.block--dark .block__heading{
+.block--dark h1,
+.block--dark h2,
+.block--dark h3
+{
   color: white;
 }
 
 .block--skewed-right{
   padding-bottom: calc(var(--padding-vertical) + 4rem);
   /* 裁剪了边区 需要加长下面的长度 所以改成10 本来是6 */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
 .block--skewed-left{
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
 
@@ -765,9 +773,9 @@ a {
 }
 
 /* 英雄组件 hero */
-.hero{
+/* .hero{
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
+} */
 
 
 .hero__tagline{
@@ -851,5 +859,26 @@ margin-top: 1rem 0;
 @media  screen and (min-width: 768px){
   .feature:nth-of-type(even) .feature__content{
     order: 2;
+  }
+}
+
+/* showcase block */
+.block--showcase__img{
+  width: 100%;
+}
+
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__img {
+    justify-self: end;
+  }
+
+  .block-showcase__img > img {
+    width: auto;
+    max-width: 700px;
   }
 }
