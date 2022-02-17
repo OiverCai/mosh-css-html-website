@@ -1,0 +1,43 @@
+<section class="block">
+      <header class="block__header">
+        <h2>Our customers are saying</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Quisquam, quidem.
+      </header>
+
+      <div class="container">
+        <div style="padding: 5rem">
+          <div class="card testimonial">
+            <div class="grid grid--1x2">
+        
+              <div class="testimonial__image">
+                <img src="images/testimonial.jpg" alt="testimonial customer" />
+                <span class="icon-container icon-container--accent">
+                  <svg class="icon icon--white icon--small">
+                    <use xlink:href="images/sprite.svg#quotes"></use>
+                  </svg>
+                </span>
+              </div>
+              
+              <blockquote class="quote">
+                <p class="quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim animi blanditiis aliquam tenetur totam velit similique quam, laudantium dignissimos quisquam.</p>
+                <footer class="media">
+                  <div class="media__image">
+                    <svg class="icon icon--primary quote__line">
+                      <use xlink:href="images/sprite.svg#line"></use>
+                    </svg>
+                  </div>
+                  <div class="media__body">
+                    <h3 class="media__title quote__author">Jone Smith</h3>
+                    <p class="quote__organization">FBI CEO</p>
+                  </div>
+                </footer>
+              </blockquote>
+              
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>

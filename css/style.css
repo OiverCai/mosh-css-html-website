@@ -667,6 +667,7 @@ a {
 .block__header{
   /* 把大的组件拆封成小的组件,h2和p组合成这个header这个小组件,以防某些设置干扰到新增的子元素 */
   text-align: center;
+  /* margin-bottom: 4rem; */
 }
 
 .block__heading{
